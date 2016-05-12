@@ -21,7 +21,7 @@ with open('requirements_dev.txt') as history_file:
     test_requirements = history_file.read()
 
 setup(
-    name='chatterbot-weather',
+    name='chatterbot_weather',
     version='0.1.0',
     description="A ChatterBot logic adapter that returns information about the weather.",
     long_description=readme + '\n\n' + history,
@@ -29,7 +29,7 @@ setup(
     author_email='gunthercx@gmail.com',
     url='https://github.com/gunthercox/chatterbot-weather',
     packages=[
-        'chatterbot-weather',
+        'chatterbot_weather',
     ],
     package_dir={'chatterbot-weather':
                  'chatterbot-weather'},

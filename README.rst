@@ -15,18 +15,9 @@ chatterbot-weather
 
 A ChatterBot logic adapter that returns information about the weather.
 
-* Free software: ISC license
 * Documentation: https://chatterbot-weather.readthedocs.org.
 
-Features
---------
+Installation
+------------
 
-* TODO
-
-Credits
----------
-
-This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
-
-.. _Cookiecutter: https://github.com/audreyr/cookiecutter
-.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
+pip install chatterbot-weather

@@ -1,1 +1,2 @@
 chatterbot>=0.3.6
+python-forecastio==1.3.4
