@@ -13,6 +13,7 @@ chatterbot-weather
         :alt: Documentation Status
 
 A ChatterBot logic adapter that returns information about the weather.
+For more information about ChatterBot see https://github.com/gunthercox/ChatterBot
 
 * Documentation: https://chatterbot-weather.readthedocs.org.
 
@@ -22,3 +23,17 @@ Installation
 .. code-block:: bash
 
    pip install chatterbot-weather
+
+Example
+-------
+
+.. code-block:: python
+
+   from chatterbot import ChatBot
+
+   chatbot = ChatBot(
+       'My Weather Bot',
+       logic_adapters=[
+           'chatterbot_weather.WeatherLogicAdapter'
+       ]
+   )
