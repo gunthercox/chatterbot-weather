@@ -2,18 +2,18 @@
 # -*- coding: utf-8 -*-
 
 """
-test_chatterbot-weather
+test_chatterbot_weather
 ----------------------------------
 
-Tests for `chatterbot-weather` module.
+Tests for `chatterbot_weather` module.
 """
 
 import unittest
 
-from chatterbot-weather import chatterbot-weather
+from chatterbot_weather import WeatherLogicAdapter
 
 
-class TestChatterbot-weather(unittest.TestCase):
+class TestWeatherLogicAdapter(unittest.TestCase):
 
     def setUp(self):
         pass

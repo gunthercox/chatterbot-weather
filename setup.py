@@ -21,7 +21,7 @@ with open('requirements_dev.txt') as history_file:
     test_requirements = history_file.read()
 
 setup(
-    name='chatterbot_weather',
+    name='chatterbot-weather',
     version='0.1.0',
     description="A ChatterBot logic adapter that returns information about the weather.",
     long_description=readme + '\n\n' + history,

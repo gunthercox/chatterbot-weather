@@ -9,9 +9,8 @@ chatterbot-weather
         :target: https://travis-ci.org/gunthercox/chatterbot-weather
 
 .. image:: https://readthedocs.org/projects/chatterbot-weather/badge/?version=latest
-        :target: https://readthedocs.org/projects/chatterbot-weather/?badge=latest
+        :target: http://chatterbot-weather.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
-
 
 A ChatterBot logic adapter that returns information about the weather.
 
@@ -20,4 +19,6 @@ A ChatterBot logic adapter that returns information about the weather.
 Installation
 ------------
 
-pip install chatterbot-weather
+.. code-block:: bash
+
+   pip install chatterbot-weather
