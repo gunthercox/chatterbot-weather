@@ -37,3 +37,15 @@ Example
            'chatterbot_weather.WeatherLogicAdapter'
        ]
    )
+
+Contributors Welcomed!
+----------------------
+
+This package was originally created as a contribution to the main ChatterBot package.
+It was converted to a optional module in order to preserve the code quality of the
+main project. This weather adapter for ChatterBot works, but could benefit from
+improvements in several areas.
+
+- Improved documentation with descriptions and information about the functions and structure of the adapter
+- Additional support for other weather APIs
+- Support for a wider range of questions about the weather (current, future, specific dates, etc.)
