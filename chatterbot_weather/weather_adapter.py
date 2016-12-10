@@ -1,10 +1,8 @@
 # -*- coding: utf-8 -*-
-from chatterbot.adapters.logic import LogicAdapter
-from chatterbot.conversation import Statement
-from chatterbot.utils.pos_tagger import POSTagger
-
-import forecastio
 import re
+from chatterbot.logic import LogicAdapter
+from chatterbot.conversation import Statement
+import forecastio
 
 
 class WeatherLogicAdapter(LogicAdapter):
@@ -17,48 +15,54 @@ class WeatherLogicAdapter(LogicAdapter):
     def __init__(self, **kwargs):
         super(WeatherLogicAdapter, self).__init__(**kwargs)
 
-        self.tagger = POSTagger()
-        self.forecastio_api_key = kwargs.get("forecastio_api_key")
+        self.forecastio_api_key = kwargs.get('forecastio_api_key')
 
     def process(self, statement):
         """
         Returns the forecast for a location (using latitude and longitude).
         """
         user_input = statement.text.lower()
-        if "weather" not in user_input:
-            return 0, Statement("")
+
+        if 'weather' not in user_input:
+            return 0, Statement('')
 
         latitude = self.get_latitude(user_input)
         longitude = self.get_longitude(user_input)
 
-        if latitude is not "" and longitude is not "":
+        if latitude is not '' and longitude is not '':
             # @TODO: Add more options for getting weather. This could include
-            #   the current temperature, the current cloud cover, etc. This
-            #   might require removing the forecastio library (which is
-            #   probably a good idea).
-            return 1, Statement("The forecast for tomorrow is: " + self.get_weather(latitude, longitude))
+            # the current temperature, the current cloud cover, etc. This
+            # might require removing the forecastio library (which is
+            # probably a good idea).
+            return 1, Statement(
+                'The forecast for tomorrow is: ' + self.get_weather(latitude, longitude)
+            )
 
-        return 0, Statement("")
+        return 0, Statement('')
 
     def get_latitude(self, user_input):
         """
         Returns the latitude extracted from the input.
         """
-        for token in self.tagger.tokenize(user_input):
-            if "latitude=" in token:
-                return re.sub("latitude=", "", token)
+        from nltk import tokenize
 
-        return ""
+        for token in tokenize.word_tokenize(user_input):
+            if 'latitude=' in token:
+                return re.sub('latitude=', '', token)
+
+        return ''
 
     def get_longitude(self, user_input):
         """
         Returns the longitude extracted from the input.
         """
-        for token in self.tagger.tokenize(user_input):
-            if "longitude=" in token:
-                return re.sub("longitude=", "", token)
+        from nltk import tokenize
 
-        return ""
+        for token in tokenize(user_input):
+            if 'longitude=' in token:
+                return re.sub('longitude=', '', token)
+
+        return ''
 
     def get_weather(self, latitude, longitude):
         """
