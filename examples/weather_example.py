@@ -3,8 +3,6 @@ from chatterbot import ChatBot
 # Create a new chat bot
 chatbot = ChatBot(
     'Weather Bot',
-    input_adapter='chatterbot.input.TerminalAdapter',
-    output_adapter='chatterbot.output.TerminalAdapter',
     logic_adapters=[
         'chatterbot_weather.weather_adapter.WeatherLogicAdapter'
     ]
